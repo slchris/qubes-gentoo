@@ -1,1 +1,45 @@
-.qubes-input-proxy.ebuild.0
+# Maintainer: Chris Su <Chris@lesscrowds.org>
+
+EAPI=8
+
+PYTHON_COMPAT=( python3_{11..13} )
+DISTUTILS_OPTIONAL=1
+
+inherit git-r3 distutils-r1 qubes
+
+if [[ ${PV} == *9999 ]]; then
+	EGIT_COMMIT=HEAD
+else
+	EGIT_COMMIT="v${PV}"
+fi
+
+EGIT_REPO_URI="https://github.com/QubesOS/qubes-app-linux-input-proxy.git"
+
+KEYWORDS="amd64"
+DESCRIPTION="Simple input device proxy"
+HOMEPAGE="http://www.qubes-os.org"
+LICENSE="GPL-2"
+
+SLOT="0"
+IUSE=""
+
+DEPEND="app-emulation/qubes-libvchan-xen
+        sys-apps/usbutils
+        ${PYTHON_DEPS}
+        "
+RDEPEND="${DEPEND}"
+PDEPEND=""
+
+src_prepare() {
+    qubes_verify_sources_git "${EGIT_COMMIT}"
+    default
+}
+
+src_compile() {
+    myopt="${myopt} DESTDIR=${D} SYSTEMD=1 BACKEND_VMM=xen LIBDIR=/usr/lib"
+	emake ${myopt} all
+}
+
+src_install() {
+	emake ${myopt} install
+}
