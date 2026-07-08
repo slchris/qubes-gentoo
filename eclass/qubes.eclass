@@ -1,4 +1,4 @@
-# Maintainer: Frédéric Pierret <frederic.pierret@qubes-os.org>
+# Maintainer: Chris Su <Chris@lesscrowds.org>
 
 # Workaround for verifying git tags
 # Feature request: https://bugs.gentoo.org/733430
