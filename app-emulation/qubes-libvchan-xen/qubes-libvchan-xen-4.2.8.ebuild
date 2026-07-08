@@ -1,6 +1,6 @@
 # Maintainer: Chris Su <Chris@lesscrowds.org>
 
-EAPI=8
+EAPI=9
 
 inherit git-r3 multilib qubes
 

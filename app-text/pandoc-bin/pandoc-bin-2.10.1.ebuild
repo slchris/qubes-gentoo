@@ -1,6 +1,6 @@
 # Maintainer: Chris Su <Chris@lesscrowds.org>
 
-EAPI=8
+EAPI=9
 
 MY_PN="${PN//-bin/}"
 MY_P="${MY_PN}-${PV}"
