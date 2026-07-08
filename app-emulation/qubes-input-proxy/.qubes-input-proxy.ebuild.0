@@ -1,8 +1,8 @@
-# Maintainer: Frédéric Pierret <frederic.pierret@qubes-os.org>
+# Maintainer: Chris Su <Chris@lesscrowds.org>
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 DISTUTILS_OPTIONAL=1
 
 inherit git-r3 distutils-r1 qubes
