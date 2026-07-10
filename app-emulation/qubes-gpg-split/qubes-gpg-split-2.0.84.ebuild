@@ -1,6 +1,6 @@
 # Maintainer: Chris Su <Chris@lesscrowds.org>
 
-EAPI=9
+EAPI=8
 
 PYTHON_COMPAT=( python3_{11..13} )
 DISTUTILS_OPTIONAL=1
