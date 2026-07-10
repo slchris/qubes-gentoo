@@ -4,6 +4,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{11..13} )
 DISTUTILS_OPTIONAL=1
+DISTUTILS_USE_PEP517=setuptools
 
 inherit git-r3 multilib distutils-r1 qubes
 
